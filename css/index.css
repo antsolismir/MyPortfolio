@@ -1,0 +1,1102 @@
+/* ======== VARIABLES Y ATRIBUTOS ======== */
+
+:root {
+  --color-fuente: #e7e7e7;
+  --color-fondo: #141414;
+  --gradient: linear-gradient(transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+/*Definicion del atributo tema=light. Es decir, cuando una etiqueta HTML(a, p, h1, ...) 
+coincida tenga el atributo tema="light" se cambiaran las variables de color-fuente y 
+color-fondo. En este caso como no pone elemento (a, p, h1, ...) se le asigna a <html>,
+es decir, cuando <html> tenga el atributo tema="light" --> <html tema="light"> entonces
+cambiara los valores de las variables definidas a continuacion.*/
+[tema="light"] {
+  --color-fuente: #141414;
+  --color-fondo: #E3DAC9;
+}
+
+/* ======== FUENTES Y COLORES ======== */
+
+/*Definicion de las fuentes a usar.*/
+@font-face {
+  font-family: 'Myanmar Khyay';
+  src: url('../fonts/MyanmarKhyay.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  /*font-size es de 50px, pero para hacerlo adaptable (responsive) usamos rem, que depende del
+  tamaño de letra base, en este caso 16px, se ha usado una calculadora online para saber que rem es.*/
+  font-size: 3.125rem;
+  /* margin-top:2rem; */
+}
+
+body,
+html {
+  /*Asignamos la letra con las variables.*/
+  color: var(--color-fuente);
+  font-size: 16px;
+  font-family: 'Myanmar Khyay', sans-serif;
+  background-color: var(--color-fondo);
+  scroll-behavior: smooth;
+
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  color: var(--color-fuente);
+  text-decoration: none;
+}
+
+:root {
+  /* Se usa para animaciones*/
+  interpolate-size: allow-keywords;
+}
+
+.active {
+  color: #fff;
+  transition: color 0.5s ease;
+  /* Quitamos la transición de text-shadow */
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.4),
+    0 0 8px rgba(255, 255, 255, 0.5),
+    0 0 16px rgba(255, 255, 255, 0.4),
+    0 0 32px rgba(255, 255, 255, 0.3),
+    0 0 64px rgba(255, 255, 255, 0.2),
+    0 0 128px rgba(255, 255, 255, 0.1);
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+
+/* ======== BOTON DE CAMBIO DE BLANCO Y NEGRO ======== */
+#switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+#switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-fuente);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--color-fondo);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: var(--color-fuente);
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px var(--color-fuente);
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* =================================================== */
+
+
+
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+/* ================== RIGHT COLUMN =================== */
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+
+.right-column {
+  padding: 0;
+  padding-left: 45%;
+  /* Deja espacio para la columna izquierda */
+  margin-right: 7%;
+
+  /* Este padding esta debido al gradiente. */
+  padding-top: 6%;
+  padding-bottom: 6%;
+
+  overflow-y: auto;
+  /*Permite el desplazamiento vertical*/
+  scroll-behavior: smooth;
+
+  /* Gradiente para la parte superior e inferior */
+  mask-image: var(--gradient, none);
+  -webkit-mask-image: var(--gradient, none);
+}
+
+.right-column::-webkit-scrollbar {
+  display: none;
+}
+
+
+.h2-info {
+  padding: 0;
+  font-size: 2.25rem;
+
+  margin-top: 5rem;
+  /* color: white; */
+  /* text-shadow: 1px 0px 21px rgba(255, 255, 255, 1); */
+}
+
+.section {
+  margin: 0;
+  padding: 0;
+}
+
+.conocimiento-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.conocimiento-details {
+  position: relative;
+  width: 100%;
+}
+
+
+
+.conocimiento-details-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.conocimiento-details-content-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.conocimiento-details-content-item-image {
+  height: 2rem;
+  width: 2rem;
+
+  display: flex;
+  /* Habilita flexbox */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+}
+
+.conocimiento-details-content-item-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+
+
+#smaller-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* =================== FLECHA EQUIS =================== */
+
+/* Contenedor de la flecha */
+.arrow-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+/*
+  BEFORE -> Linea vertical 
+  AFTER --> Linea horizontal
+*/
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 0.2rem;
+  background-color: var(--color-fuente);
+  transition: transform 0.3s ease;
+}
+
+.arrow::before {
+  transform: var(--arrow_trans, rotate(90deg));
+}
+
+.arrow::after {
+  transform: rotate(180deg);
+}
+
+
+details {
+  position: relative;
+  margin: 1rem 0;
+  border: none;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+details::details-content {
+  block-size: 0;
+  transition: block-size 1s ease, content-visibility 1s ease;
+  transition-behavior: allow-discrete;
+}
+
+details summary {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: relative;
+  outline: none;
+  list-style: none;
+  align-items: center;
+}
+
+details summary p {
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+details summary::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: var(--details-width, 0);
+  height: 1.5px;
+  opacity: var(--details-opacity, 0);
+  background-color: var(--color-fuente);
+  transition: width 0.7s ease, opacity 0.5s ease;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+details[open] {
+  --arrow_trans: rotate(180deg);
+  --details-width: 100%;
+  --details-opacity: 1;
+}
+
+details summary:hover {
+  --details-width: 100%;
+  --details-opacity: 1;
+}
+
+
+/* ================ ESTUDIOS ================ */
+
+.estudios-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-evenly;
+  /* align-items: center; */
+}
+
+.estudios-columns-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.estudios-columns-element img {
+  width: 15rem;
+  height: 15rem;
+}
+
+.estudios-columns-element .nombre-centro {
+  margin: 0;
+  padding-top: 0.5rem;
+  /* color: #b4b4b4; */
+}
+
+.estudios-columns-element .nombre-titulo {
+  margin: 0;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.estudios-columns-element hr {
+  width: 0;
+  opacity: 0;
+  transition: width 0.7s ease, opacity 0.5s ease;
+}
+
+.estudios-columns-element:hover hr {
+  opacity: 1;
+  width: 100%;
+}
+
+.estudios-columns-element input[type="checkbox"]:checked~hr {
+  opacity: 1;
+  width: 100%;
+}
+
+.small-text {
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+}
+
+.estudios-columns-element input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+
+/* ========================================== */
+
+@keyframes opacityIN {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIN {
+  from {
+    transform: translateY(100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal {
+  display: none;
+  /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Fondo oscuro con opacidad */
+  z-index: 1000;
+  /* Asegura que esté por encima de otros elementos */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+  /* Muestra el modal */
+  animation: opacityIN 1s ease;
+  /* Aplica la animación de entrada */
+}
+
+.modal-content {
+  background-color: var(--color-fondo);
+  padding: 4rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 55%;
+  max-height: 60%;
+  position: relative;
+  opacity: 1;
+  /* Asegura que sea visible */
+  animation: fadeIN 1.5s ease;
+
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+
+
+
+/* Botón de cierre */
+.modal .close {
+  position: absolute;
+  color: var(--color-fuente);
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content hr {
+  margin: 0;
+}
+
+.modal p {
+  text-align: left;
+}
+
+.us-logo {
+  position: sticky;
+  flex: .5;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20rem;
+  height: 20rem;
+  /* align-self: center; */
+}
+
+.us-logo-description {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hr-style {
+  border-top: 2px solid;
+  text-align: center;
+  width: 100%;
+  height: 0;
+}
+
+.us-grado-texto {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+
+  flex: 1;
+  overflow-y: auto;
+
+  mask-image: var(--gradient, none);
+  -webkit-mask-image: var(--gradient, none);
+}
+
+.us-grado-texto::-webkit-scrollbar {
+  display: none;
+}
+
+.us-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.us-logo p {
+  text-align: center;
+}
+
+.us-seccion {
+  color: white;
+}
+
+.us-seccion h2 {
+  margin-bottom: .5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding-top: .4em;
+  padding-bottom: .2em;
+  padding-left: .4em;
+  padding-right: .4em;
+  border-radius: 10px;
+  font-weight: 400;
+  margin: .25em .1em;
+  color: var(--color-fondo);
+}
+
+.iframe-pdf {
+  width: 100%;
+  height: 400px;
+}
+
+.red {
+  /* Programación    */
+  background-color: rgb(255, 108, 108);
+}
+
+.orange {
+  /* Análisis        */
+  background-color: rgb(255, 168, 108);
+}
+
+.yellow {
+  /* Diseño          */
+  background-color: rgb(255, 228, 108);
+}
+
+.light-green {
+  /* Testing         */
+  background-color: rgb(204, 255, 153);
+}
+
+.cyan {
+  /* Mantenimiento   */
+  background-color: rgb(153, 255, 255);
+}
+
+.light-blue {
+  /* Requisitos      */
+  background-color: rgb(153, 204, 255);
+}
+
+.purple {
+  /* Configuración   */
+  background-color: rgb(204, 153, 255);
+}
+
+.pink {
+  /* Arquitectura    */
+  background-color: rgb(255, 153, 204);
+}
+
+.peach {
+  /* Patrones        */
+  background-color: rgb(255, 213, 179);
+}
+
+.mint {
+  /* UML             */
+  background-color: rgb(210, 228, 193);
+}
+
+.sky {
+  /* Java            */
+  background-color: rgb(193, 210, 255);
+}
+
+.lavender {
+  /* Python          */
+  background-color: rgb(243, 210, 255);
+}
+
+.rose {
+  /* JavaScript      */
+  background-color: rgb(255, 210, 210);
+}
+
+.cream {
+  /* SQL             */
+  background-color: rgb(255, 246, 204);
+}
+
+.mint-green {
+  /* NoSQL           */
+  background-color: rgb(204, 255, 231);
+}
+
+.sand {
+  /* Herramientas    */
+  background-color: rgb(248, 231, 209);
+}
+
+.mint-light {
+  /* Metodologías    */
+  background-color: rgb(221, 245, 195);
+}
+
+
+
+/* ============ EXPERIENCIA ============ */
+
+.experiencia-mapa {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+.artificio_lateral {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  /* WIDTH del artificio 10% - 90% del texto */
+  width: 10%;
+  height: 100%;
+}
+
+.container-linea {
+  height: 100%;
+  width: 100%;
+}
+
+.container-linea .linea {
+  position: relative;
+  /* Tamaño de la linea */
+  height: 95%;
+  /* Espesor de la linea */
+  width: 5px;
+
+  margin-top: 20px;
+  justify-self: center;
+  background-color: var(--color-fuente);
+}
+
+.container .circulo {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+
+  border-radius: 100%;
+  background-color: var(--color-fuente);
+
+  align-content: center;
+}
+
+.container .circulo .centro {
+  position: relative;
+  width: 70%;
+  height: 70%;
+
+  border-radius: 100%;
+
+  background-color: var(--color-fondo);
+  justify-self: center;
+}
+
+
+
+/* ========= EXPERIENCIA (TEXTO) ========= */
+
+.container-texto {
+  /* WIDTH del artificio 10% - 90% del texto */
+  width: 90%;
+  height: 400px;
+
+  padding: 0;
+  position: relative;
+}
+
+.container-texto p,
+.container-texto h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.titulo-fecha {
+  display: flex;
+  width: 100%;
+}
+
+.titulo-fecha p {
+  margin-left: auto;
+}
+
+.texto {
+  position: absolute;
+  width: 100%;
+}
+
+
+.container .circulo {
+  margin-top: 50px;
+}
+
+.circulo.secundario {
+  margin-top: 260px;
+}
+
+.texto.primero {
+  margin-top: 45px;
+}
+
+.texto.segundo {
+  margin-top: 255px;
+}
+
+
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+/* =================== LEFT COLUMN =================== */
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+
+.custom-list {
+  margin: 0;
+  list-style: none;
+  /* Crea un contador con el valor inicial a 0 en custom-list*/
+  counter-reset: item 0;
+  padding-left: 0;
+  font-size: 1.5rem;
+  /* padding-top: 2rem; */
+}
+
+.custom-list li {
+  /* Incrementa "item" en 1 */
+  counter-increment: item 1;
+  margin-bottom: 1rem;
+}
+
+.custom-list li::before {
+  /* Content define el contenido que se va a mostrar, antes del contenido en <li>
+  (porque estamos en li::before. Despues, counter(item) llama al contador item con
+  el estilo decimal-leading-zero. Fuera de la llama al contador, se le añade un .
+  al final. Podemos verlo como: por cada <li> en custom-list, antes del contenido de
+  este, llama al contador item definido en custom-list con el estilo 
+  decimal-leading-zero y le añade un punto al final.*/
+  content: counter(item, decimal-leading-zero) ".";
+}
+
+.custom-list a {
+  text-decoration: none;
+}
+
+.custom-list li:hover {
+  color: #fff;
+  transition: color 0.5s ease;
+  /* Quitamos la transición de text-shadow */
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.6),
+    0 0 8px rgba(255, 255, 255, 0.7),
+    0 0 16px rgba(255, 255, 255, 0.6),
+    0 0 32px rgba(255, 255, 255, 0.5),
+    0 0 64px rgba(255, 255, 255, 0.3),
+    0 0 128px rgba(255, 255, 255, 0.1);
+
+}
+
+.left-column {
+  position: fixed;
+  /* Fija la columna izquierda en la ventana */
+  top: 0;
+  /* Asegura que esté pegada a la parte superior */
+  left: 0;
+  /* Asegura que esté pegada al lado izquierdo */
+  width: 35%;
+  /* Define el ancho de la columna izquierda */
+  overflow: hidden;
+  /*Evita el desplazamiento interno*/
+  padding-left: 7%;
+  margin-top: 6%;
+  z-index: 100;
+  /*Asegura que esté por encima de otros elementos si es necesario */
+}
+
+.left-column p {
+  margin: 0;
+  padding: 0;
+  width: 75%;
+}
+
+.main-title-index {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  font-size: 3.125rem;
+}
+
+/* ======== CONTACTO ======== */
+
+
+.contact-title {
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+  /* padding-top: 1rem; */
+  /* margin-bottom: -1.5rem; */
+  /* Reduce el espacio inferior */
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: row;
+  margin-left: -0.5rem;
+  margin-top: 1rem;
+  gap: 2rem;
+}
+
+.contact-list-elemnt {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.5rem;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.logo-text {
+  padding: 0;
+  padding-top: 0.5rem;
+}
+
+.contact-list img {
+  width: 1.5rem;
+  height: 1.5rem;
+  align-self: center;
+}
+
+#email-img {
+  height: 1.4rem;
+}
+
+.texto-gradiente-lineal-black-up {
+  background: linear-gradient(to top, var(--color-fondo), var(--color-fuente));
+  color: transparent;
+  background-clip: text;
+}
+
+.texto-gradiente-lineal-black-down {
+  background: linear-gradient(to bottom, var(--color-fondo), var(--color-fuente));
+  color: transparent;
+  background-clip: text;
+}
+
+.texto-gradiente-lineal-blue-up {
+  background: linear-gradient(to top, #6785C1, var(--color-fuente));
+  color: transparent;
+  background-clip: text;
+}
+
+.texto-gradiente-circular-right {
+  background: radial-gradient(circle at right, #444444, var(--color-fuente));
+  color: transparent;
+  background-clip: text;
+}
+
+.texto-gradiente-circular-right-top {
+  background: radial-gradient(circle at right top, #444444, var(--color-fuente));
+  color: transparent;
+  background-clip: text;
+}
+
+.texto-gradiente-amarillo-granate-up {
+  background: linear-gradient(to top, #ffc72c, var(--color-fuente));
+  color: transparent;
+  background-clip: text;
+}
+
+/* =================================================== */
+/* ====================== CARDS ====================== */
+/* =================================================== */
+
+.cards-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  height: auto;
+  display: flex;
+
+  padding-top: 2rem;
+  justify-content: space-evenly;
+  block-size: auto;
+}
+
+.card {
+  height: 15rem;
+  width: 18rem;
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  color: #000;
+  transform: translateZ(0);
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
+  transition: transform 0.2s;
+}
+
+.card__footer {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: red;
+  display: grid;
+  /* grid-template-row: auto auto; */
+  gap: 0.5ch;
+  background: hsl(0 0% 100% / 0.5);
+  backdrop-filter: blur(16px);
+  height: 30%;
+  align-content: center;
+}
+
+.card__footer__text {
+  padding: 1.5rem;
+}
+
+.card__action {
+  position: absolute;
+  aspect-ratio: 1;
+  width: calc(var(--size) * 0.15);
+  bottom: 30%;
+  right: 1.5rem;
+  transform: translateY(50%) translateY(calc((var(--size) * 0.4))) translateY(calc(var(--hover, 0) * (var(--size) * -0.4)));
+  background: purple;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  background: hsl(0 0% 100% / 0.5);
+  /*   backdrop-filter: blur(calc(var(--blur) * 0.5)); */
+  transition: transform 0.2s;
+}
+
+.card__action svg {
+  aspect-ratio: 1;
+  width: 50%;
+}
+
+.card__footer span:nth-of-type(1) {
+  font-size: 0.9rem;
+}
+
+.card__footer span:nth-of-type(2) {
+  font-size: 0.9rem;
+}
+
+.card:is(:hover, :focus-visible) {
+  --hover: 1;
+}
+
+
+/* =================================================== */
+/* ==================== Sobre mi ===================== */
+/* =================================================== */
+
+
+.yo_imagen_sobremi {
+  float: right;
+  shape-margin: 1rem;
+  /* un circulo de radio 40% y con centro 40% de x y 50% de y */
+  clip-path: circle(40% at 48% 50%);
+  shape-outside: circle(45%);
+  width: 25rem;
+}
+
+.contact-02 {
+  display: none;
+  margin-top: 4rem;
+}
+
+.contact-02 .contact-title {
+  margin: 0;
+  padding: 0;
+}
+.contact-02 .contact-list {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+/* =================== RESPONSIVE ==================== */
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+
+
+@media (max-width: 475px) {}
+
+@media (max-width: 640px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 1280px) {}
+
+@media (max-width: 1600px) {
+
+  .left-column {
+    visibility: hidden;
+  }
+
+  .right-column {
+    padding-left: 7%;
+    /* width: 100%; */
+  }
+}
+
+@media (max-height:900px) {
+  .contact-02 {
+    margin-top: 4rem;
+    display: block;
+  }
+
+  .contact {
+    display: none;
+  }
+}
