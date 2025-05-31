@@ -5,13 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Antonio Manuel Solis Miranda's Portfolio">
-
-    <title>Antonio's portfolio</title>
-
+    <title>Antonio Manuel Solis Miranda</title>
+    <link rel="icon" type="image/png" href="./img/favicon/icons8-maletín-emoji-96.png">
     <link rel="stylesheet" href="./css/index.css">
-    <!-- <link rel="stylesheet" href="./css/left-column/left-column.css">
-    <link rel="stylesheet" href="./css/right-column/right-column.css"> -->
-
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/index.js"></script>
 </head>
@@ -24,7 +20,7 @@
                 <h1 class="title">Hi &#x1f44b;, I'm <span class="texto-gradiente-circular-right">Antonio</span><br><span
                         class="texto-gradiente-circular-right-top">Manuel Solis Miranda</span></h1>
 
-                <p>Soy un Ingeniero de Software Full-Stack, con conocimiento
+                <p class="left-column-description">Soy un Ingeniero de Software Full-Stack, con conocimiento
                     en Inteligencia Artificia y Computer Vision. Soy un programador
                     profesional y proactivo con ganas de trabajar en grandes
                     proyectos y aportar mis conocimientos a equipos que necesiten
@@ -56,6 +52,10 @@
                         <a class="contact-list-elemnt" href="mailto:antomanu2000@hotmail.es">
                             <img id="email-img" src="./img/rrss/email/Email@3x.png" alt="Email logo" />
                             <p class="logo-text">antomanu2000@hotmail.es</p>
+                        </a>
+                        <a class="contact-list-elemnt" href="tel:+34611408436">
+                            <img src="./img/rrss/movil/icons8-llamada-100.png" alt="Movil logo" />
+                            <p class="logo-text">611408436</p>
                         </a>
                     </div>
                 </div>
@@ -137,24 +137,38 @@
                                     </div>
                                     <p>REST APIs</p>
                                 </div>
-                            </div>
-                            <div class="conocimiento-details-content">
+                                <div class="conocimiento-details-content-item">
+                                    <div class="conocimiento-details-content-item-image">
+                                        <img src="img/tecnologias/face_recognition/icons8-face-id-96.png"
+                                            alt="Reconocimiento facial">
+                                    </div>
+                                    <p>Reconocimiento facial</p>
+                                </div>
+                                <div class="conocimiento-details-content-item">
+                                    <div class="conocimiento-details-content-item-image">
+                                        <img src="img/tecnologias/opencv/icons8-abiertocv-144.svg" alt="OpenCV">
+                                    </div>
+                                    <p>OpenCV</p>
+                                </div>
+                                <div class="conocimiento-details-content-item">
+                                    <div class="conocimiento-details-content-item-image">
+                                        <img src="img/tecnologias/tensorflow/icons8-flujo-tensor-144.svg"
+                                            alt="TensorFlow">
+                                    </div>
+                                    <p>TensorFlow</p>
+                                </div>
                                 <div class="conocimiento-details-content-item">
                                     <div class="conocimiento-details-content-item-image">
                                         <img src="img/tecnologias/docker/icons8-estibador-144.png" alt="Docker logo">
                                     </div>
                                     <p>Docker</p>
                                 </div>
-                            </div>
-                            <div class="conocimiento-details-content">
                                 <div class="conocimiento-details-content-item">
                                     <div class="conocimiento-details-content-item-image">
                                         <img src="img/tecnologias/mongodb/icons8-mongodb-96.png" alt="MongoDB logo">
                                     </div>
                                     <p>MongoDB</p>
                                 </div>
-                            </div>
-                            <div class="conocimiento-details-content">
                                 <div class="conocimiento-details-content-item">
                                     <div class="conocimiento-details-content-item-image">
                                         <img src="img/lenguajes/sql/icons8-base-de-datos-100.png" id="smaller-logo"
@@ -162,7 +176,7 @@
                                     </div>
                                     <p>SQLDeveloper</p>
                                 </div>
-                            </div>
+
                         </details>
                     </div>
                     <div class="conocimiento-details">
@@ -232,6 +246,42 @@
                                 </div>
                             </summary>
                             <div class="conocimiento-details-content">
+                                <div class="conocimiento-details-content-item">
+                                    <div class="conocimiento-details-content-item-image">
+                                        <img style="height: 1.5rem; width: 1.5rem;"
+                                            src="img/tecnologias/image_edition/icons8-photo-editor-90.png"
+                                            alt="Image edition" title="Algoritmos para la edición de imagenes" />
+                                    </div>
+                                    <p>Algoritmos para la edición de imagenes</p>
+                                </div>
+                                <div class="conocimiento-details-content-item">
+                                    <div class="conocimiento-details-content-item-image">
+                                        <img src="img/tecnologias/math_algorithm/icons8-matemáticas-100.png" alt="Math"
+                                            title="Algoritmos matemáticos" />
+                                    </div>
+                                    <p>Algoritmos matemáticos</p>
+                                </div>
+                                <div class="conocimiento-details-content-item">
+                                    <div class="conocimiento-details-content-item-image">
+                                        <img src="img/tecnologias/linux/icons8-linux-96.png" alt="Linux"
+                                            title="Linux" />
+                                    </div>
+                                    <p>Linux</p>
+                                </div>
+                                <div class="conocimiento-details-content-item">
+                                    <div class="conocimiento-details-content-item-image">
+                                        <img src="img/tecnologias/windows/icons8-windows-10-150.svg" alt="Windows"
+                                            title="Windows" />
+                                    </div>
+                                    <p>Windows</p>
+                                </div>
+                                <div class="conocimiento-details-content-item">
+                                    <div class="conocimiento-details-content-item-image">
+                                        <img src="img/tecnologias/macos/icons8-mac-os-150.svg" alt="MacOS"
+                                            title="MacOS" />
+                                    </div>
+                                    <p>MacOS</p>
+                                </div>
                             </div>
                         </details>
                     </div>
@@ -249,15 +299,15 @@
 
                 <div class="estudios-columns">
                     <div class="estudios-columns-element">
-                        <input id="invisible-checkbox" class="invisible-checkbox" type="checkbox">
+                        <input id="invisible-checkbox-us" class="invisible-checkbox" type="checkbox">
                         <img src="img/us/iconizer-universidad-de-sevilla-seeklogo.svg" alt="Logo US">
                         <hr>
                         <p class="nombre-centro">Universidad de Sevilla</p>
                         <p class="nombre-titulo">Ingeniería Informática - Ingeniería del Software</p>
-                        <!-- <a href="#" class="small-text">Mas info +</a> -->
                     </div>
 
                     <div class="estudios-columns-element">
+                        <input id="invisible-checkbox-harvard" class="invisible-checkbox" type="checkbox">
                         <img src="img/edx/edx_blanco.svg" id="edx-logo" alt="Logo edx">
                         <hr>
                         <p class="nombre-centro">HarvardX x edX</p>
@@ -273,71 +323,40 @@
                     y profesionales, donde he podido compartir mis conocimientos y habilidades con el fin de mejorar y
                     alcanzar los objetivos de cada organización.
                 </p>
-                <div class="experiencia-mapa">
-                    <div class="container">
-                        <div class="artificio_lateral">
-                            <div class="container-linea">
-                                <div class="linea"></div>
-                            </div>
-                            <div class="circulo">
-                                <div class="centro">
-                                </div>
-                            </div>
-                            <div class="circulo secundario">
-                                <div class="centro">
-                                </div>
-                            </div>
+                <ol class="timeline">
+                    <li class="timeline-item">
+                        <span class="timeline-marker"></span>
+                        <div class="titulo-y-fecha">
+                            <h2 class="texto-gradiente-amarillo-granate-up no-margin">Trabajos universitarios</h2>
+                            <div class="fecha-del-titulo">2018-2024</div>
                         </div>
-                        <div class="container-texto">
-                            <div class="texto primero">
-                                <div class="titulo-fecha">
-                                    <h2><span class="texto-gradiente-amarillo-granate-up">Trabajos universitarios</span>
-                                    </h2>
-                                    <p>2018-2024</p>
-                                </div>
-                                <p style="color: #ffc72c;">Universidad de Sevilla</p>
-                                <ul>
-                                    <li>Creación de múltiples trabajos de carácter académico, con un
-                                        enfoque Full-Stack.</li>
-                                    <li>Excelente capacidad de trabajo en equipo, dado la cantidad de
-                                        trabajos con esta condición.</li>
-                                    <li>Trabajo bajo presión, debido a las fechas ajustadas que suelen ser
-                                        habituales en los trabajos universitarios.</li>
-                                    <li>Sobresaliente en TFG (9.2) - Sistema de reconocimiento facial.</li>
-                                </ul>
+                        <p style="color: #ffc72c;">Universidad de Sevilla</p>
+                        <ul>
+                            <li>Creación de múltiples trabajos de carácter académico, con un
+                                enfoque Full-Stack.</li>
+                            <li>Excelente capacidad de trabajo en equipo, dado la cantidad de
+                                trabajos con esta condición.</li>
+                            <li>Trabajo bajo presión, debido a las fechas ajustadas que suelen ser
+                                habituales en los trabajos universitarios.</li>
+                            <li>Sobresaliente en TFG (9.2) - Sistema de reconocimiento facial.</li>
+                        </ul>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-marker"></span>
+                            <div class="titulo-y-fecha">
+                                <h2 class="texto-gradiente-lineal-blue-up no-margin">Desarrollador de Software</h2>
+                                <div class="fecha-del-titulo">2022-2023</div>
                             </div>
-
-                            <div class="texto segundo">
-                                <div class="titulo-fecha">
-                                    <h2><span class="texto-gradiente-lineal-blue-up">Desarrollador de Software</span>
-                                    </h2>
-                                    <p>2022-2023</p>
-                                </div>
-                                <p style="color: #6785C1;">NTT Data</p>
-                                <ul>
-                                    <li>Desarrollador de soluciones en sistemas basados en Java.</li>
-                                    <li>Atención de incidencias de los usuarios.</li>
-                                    <li>Manejo de base de datos SQL.</li>
-                                    <li>Testing de soluciones.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                            <p style="color: #6785C1;">NTT Data</p>
+                            <ul>
+                                <li>Desarrollador de soluciones en sistemas basados en Java.</li>
+                                <li>Atención de incidencias de los usuarios.</li>
+                                <li>Manejo de base de datos SQL.</li>
+                                <li>Testing de soluciones.</li>
+                            </ul>
+                    </li>
+                </ol>
             </section>
-            <!-- <section id="futuro" class="section">
-                <h2 class="h2-info"><span class="texto-gradiente-azul-blanco-up">04. Futuro</span></h2>
-                <p>
-                    La vida de un programador está protagonizada por el aprendizaje continuo que su profesion le
-                    requiere. Por ello es muy importante tener claro cual es el camino que uno quiere seguir, definiendo
-                    cuales van a ser los objetivos propios, facilitando así una simbiosis entre empresa y trabajador del
-                    que ambos salgan beneficiados a medio y largo plazo.
-                    <br><br>
-                    En este apartado se muestran mis objetivos principales actualmente y que marcan mis espectativas
-                    profesionales:
-                </p>
-            </section> -->
 
             <section id="proyectos" class="section">
                 <h2 class="h2-info texto-gradiente-lineal-black-up">04. Proyectos</h2>
@@ -345,27 +364,54 @@
                     Algunos de los proyectos personales realizados a destacar son los siguientes:
                 </p>
                 <div class="cards-container">
-                    <div href="#" class="card">
-                        <img src="img/proyectos/facial_recognition.png"
-                            alt="facial recognition app - image of people running" class="card__img">
-                        <span class="card__footer">
-                            <span class="card__footer__text">Reconocimiento facial en pruebas deportivas.</span>
-                        </span>
+                    <div class="card-proyecto-tfg-wrapper" style="position:relative; display:inline-block;">
+                        <a href="./misc/TFG.pdf" target="_blank" class="card card-proyecto-tfg">
+                            <img src="img/proyectos/facial_recognition.png"
+                                alt="facial recognition app - image of people running" class="card__img">
+                            <span class="card__footer">
+                                <span class="card__footer__text">Reconocimiento facial en pruebas deportivas.</span>
+                            </span>
+                        </a>
+                        <div class="tecnologias-hover">
+                            <img src="img/lenguajes/python/icons8-python-256.png" alt="Python" title="Python" />
+                            <img src="img/herramientas/bash/icons8-consola-100.png" alt="Bash" title="Bash" />
+                            <img src="img/herramientas/git/icons8-git-100.png" alt="Git" title="Git" />
+                            <img src="img/herramientas/vscode/icons8-visual-studio-code-2019-144.png" alt="VSCode"
+                                title="VSCode" />
+                            <img src="img/tecnologias/opencv/icons8-abiertocv-144.svg" alt="OpenCV" title="OpenCV" />
+                            <img src="img/tecnologias/tensorflow/icons8-flujo-tensor-144.svg" alt="TensorFlow"
+                                title="TensorFlow" />
+                            <img src="img/tecnologias/face_recognition/icons8-face-id-96.png" alt="Face Recognition"
+                                title="Tecnologías reconocimiento facial" />
+                        </div>
                     </div>
-                    <div href="#" class="card">
-                        <img src="img/proyectos/images_modif.png" alt="web app front page." class="card__img">
-                        <span class="card__footer">
-                            <span class="card__footer__text">Entendimiento de los filtros matematicos en
-                                imagenes.</span>
-                        </span>
+                    <div class="card-proyecto-tfg-wrapper" style="position:relative; display:inline-block;">
+                        <a href="https://imagenespsm.streamlit.app/" target="_blank" class="card">
+                            <img src="img/proyectos/images_modif.png" alt="web app front page." class="card__img">
+                            <span class="card__footer">
+                                <span class="card__footer__text">Entendimiento de los filtros matematicos en
+                                    imagenes.</span>
+                            </span>
+                        </a>
+                        <div class="tecnologias-hover">
+                            <img src="img/lenguajes/python/icons8-python-256.png" alt="Python" title="Python" />
+                            <img src="img/herramientas/github/icons8-github-192.png" alt="GitHub" title="GitHub" />
+                            <img src="img/herramientas/vscode/icons8-visual-studio-code-2019-144.png" alt="VSCode"
+                                title="VSCode" />
+                            <img src="img/tecnologias/image_edition/icons8-photo-editor-90.png" alt="Image edition"
+                                title="Algoritmos para la edición de imagenes" />
+                            <img src="img/tecnologias/math_algorithm/icons8-matemáticas-100.png" alt="Math"
+                                title="Algoritmos matemáticos" />
+
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section id="sobremi" class="section">
-                <h2 class="h2-info texto-gradiente-lineal-black-up">05. Sobre mi</h2>
+                <h2 class="h2-info texto-gradiente-lineal-black-up no-justify">05. Sobre mi</h2>
+                <img src="img/sobremi/cara.png" alt="Antonio Manuel Solis Miranda image." class="yo_imagen_sobremi">
                 <div>
-                    <img src="img/sobremi/cara.png" alt="Antonio Manuel Solis Miranda image." class="yo_imagen_sobremi">
                     Hola, soy Antonio Manuel, ingeniero de software con una fuerte inclinación hacia la inteligencia
                     artificial y el desarrollo de soluciones tecnológicas innovadoras. Me apasiona aplicar la
                     tecnología
@@ -396,6 +442,7 @@
                     me ha enseñado disciplina, constancia y la importancia del progreso y alcanzar metas,
                     principios
                     que también aplico a mi trabajo.
+                    <br><br>
                 </div>
                 <div class="contact-02">
                     <p class="contact-title">Contacto</p>
@@ -413,6 +460,10 @@
                             <img id="email-img" src="./img/rrss/email/Email@3x.png" alt="Email logo" />
                             <p class="logo-text">antomanu2000@hotmail.es</p>
                         </a>
+                        <a class="contact-list-elemnt" href="tel:+34611408436">
+                            <img src="./img/rrss/movil/icons8-llamada-100.png" alt="Movil logo" />
+                            <p class="logo-text">611408436</p>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -421,7 +472,7 @@
         <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <div class="us-logo">
+                <div class="container-logo">
                     <div style="position: relative;">
                         <img src="img/us/iconizer-universidad-de-sevilla-seeklogo.svg" alt="US Logo">
                         <img src="img/us/eur-ace.png" alt="EUR-ACE Logo"
@@ -431,7 +482,7 @@
                     <div>
                         <p>Ingeniería del Software</p>
                         <p>Graduado en Ingeniería del Software</p>
-                        <div class="us-logo-description">
+                        <div class="logo-description">
                             <hr class="hr-style">
                             🎓
                             <hr class="hr-style">
@@ -439,8 +490,8 @@
                         <p style="justify-content: center;">Promocion 2018/2019</p>
                     </div>
                 </div>
-                <div class="us-grado-texto">
-                    <div class="us-seccion">
+                <div class="grado-texto">
+                    <div class="grado-seccion">
                         <h2>Descripción</h2>
                         <p>
                             Obtuve el Grado en Ingeniería Informática - Ingeniería del Software en la Escuela Técnica
@@ -477,7 +528,7 @@
 
                         </p>
                     </div>
-                    <div class="us-seccion">
+                    <div class="grado-seccion">
                         <h2>Habilidades adquiridas</h2>
                         <span class="tag red">Programación</span>
                         <span class="tag orange">Análisis</span>
@@ -497,9 +548,55 @@
                         <span class="tag sand">Herramientas</span>
                         <span class="tag mint-light">Metodologías</span>
                     </div>
-                    <div class="us-seccion-titulo-acred">
+                    <div>
                         <h2>Titulo acreditativo</h2>
                         <iframe class="iframe-pdf" src="misc/AntonioManuelSolisMiranda-titulo.pdf"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-harvard" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="container-logo">
+                    <div class="harvard-logo">
+                        <img src="img/edx/edx_blanco.svg" alt="edX Logo">
+                    </div>
+                    <hr>
+                    <div>
+                        <p>CS50's Introduction to Artificial Intelligence with Python</p>
+                        <p>HarvardX - edX</p>
+                        <div class="logo-description">
+                            <hr class="hr-style">
+                            🎓
+                            <hr class="hr-style">
+                        </div>
+                        <p style="justify-content: center;">Cursando actualmente</p>
+                    </div>
+                </div>
+                <div class="grado-texto-havard">
+                    <div class="grado-seccion">
+                        <h2>Descripción</h2>
+                        <p>
+                            Certificado de finalización del curso CS50's Introduction to Artificial Intelligence with
+                            Python, impartido por HarvardX a través de edX. El curso abarca conceptos fundamentales de
+                            inteligencia artificial, incluyendo búsqueda, optimización, aprendizaje automático, redes
+                            neuronales y procesamiento de lenguaje natural, con aplicaciones prácticas en Python.
+                            <br><br>
+                            Puede consultar el programa del curso en este <a href="https://cs50.harvard.edu/ai/2024/"
+                                target="_blank" style="text-decoration: underline;">enlace</a>.
+                        </p>
+                    </div>
+                    <div class="grado-seccion">
+                        <h2>Habilidades que estoy aprendiendo</h2>
+                        <span class="tag red">Python</span>
+                        <span class="tag orange">Machine Learning</span>
+                        <span class="tag yellow">Redes Neuronales</span>
+                        <span class="tag light-green">NLP</span>
+                        <span class="tag cyan">Búsqueda</span>
+                        <span class="tag light-blue">Optimización</span>
+                        <span class="tag purple">Resolución de problemas</span>
+                        <span class="tag pink">AI</span>
                     </div>
                 </div>
             </div>

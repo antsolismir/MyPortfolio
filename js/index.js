@@ -64,48 +64,54 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    const $modal = $("#modal");
-    const $checkbox = $(".invisible-checkbox");
-    const $closeModal = $(".modal .close");
+    // Universidad de Sevilla
+    const $modalUS = $("#modal");
+    const $checkboxUS = $("#invisible-checkbox-us");
+    const $closeModalUS = $("#modal .close");
 
-    // Abre el modal cuando el checkbox se marca
-    $checkbox.on("change", function () {
+    $checkboxUS.on("change", function () {
         if ($(this).is(":checked")) {
-            $modal.addClass("show"); // Agrega la clase para mostrar el modal con animación
+            $modalUS.addClass("show");
         } else {
-            $modal.removeClass("show"); // Elimina la clase para ocultar el modal
+            $modalUS.removeClass("show");
         }
     });
 
-    // Cierra el modal al hacer clic en el botón de cierre
-    $closeModal.on("click", function () {
-        $modal.removeClass("show"); // Oculta el modal
-        $checkbox.prop("checked", false); // Desmarca el checkbox
+    $closeModalUS.on("click", function () {
+        $modalUS.removeClass("show");
+        $checkboxUS.prop("checked", false);
     });
 
-    // Cierra el modal al hacer clic fuera del contenido
     $(window).on("click", function (e) {
-        if ($(e.target).is($modal)) {
-            $modal.removeClass("show"); // Oculta el modal
-            $checkbox.prop("checked", false); // Desmarca el checkbox
+        if ($(e.target).is($modalUS)) {
+            $modalUS.removeClass("show");
+            $checkboxUS.prop("checked", false);
         }
     });
 });
 
 $(document).ready(function () {
-    function isRightColumnScrolledToEnd() {
-        const $rightColumn = $('.right-column');
-        // scrollTop: desplazamiento actual
-        // innerHeight: altura visible
-        // scrollHeight: altura total del contenido
-        return Math.ceil($rightColumn.scrollTop() + $rightColumn.innerHeight()) >= $rightColumn[0].scrollHeight;
-    }
-    
-    // Ejemplo de uso:
-    $('.right-column').on('scroll', function() {
-        if (isRightColumnScrolledToEnd()) {
-            console.log('¡Has llegado al final de right-column!');
-            // Aquí puedes ejecutar la acción que desees
+    const $modalHarvard = $("#modal-harvard");
+    const $checkboxHarvard = $("#invisible-checkbox-harvard");
+    const $closeModalHarvard = $("#modal-harvard .close");
+
+    $checkboxHarvard.on("change", function () {
+        if ($(this).is(":checked")) {
+            $modalHarvard.addClass("show");
+        } else {
+            $modalHarvard.removeClass("show");
+        }
+    });
+
+    $closeModalHarvard.on("click", function () {
+        $modalHarvard.removeClass("show");
+        $checkboxHarvard.prop("checked", false);
+    });
+
+    $(window).on("click", function (e) {
+        if ($(e.target).is($modalHarvard)) {
+            $modalHarvard.removeClass("show");
+            $checkboxHarvard.prop("checked", false);
         }
     });
 });

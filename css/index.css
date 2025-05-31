@@ -190,11 +190,14 @@ input:checked+.slider:before {
 .conocimiento-columns {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 2rem;
+  justify-content: space-evenly;
 }
 
 .conocimiento-details {
   position: relative;
+  max-width: 200px;
   width: 100%;
 }
 
@@ -210,18 +213,21 @@ input:checked+.slider:before {
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+.conocimiento-details-content-item p {
+  word-break: break-word;
 }
 
 .conocimiento-details-content-item-image {
   height: 2rem;
   width: 2rem;
-
   display: flex;
-  /* Habilita flexbox */
   justify-content: center;
-  /* Centra horizontalmente */
   align-items: center;
-  /* Centra verticalmente */
 }
 
 .conocimiento-details-content-item-image img {
@@ -229,8 +235,6 @@ input:checked+.slider:before {
   width: 100%;
   object-fit: contain;
 }
-
-
 
 #smaller-logo {
   width: 1.5rem;
@@ -249,6 +253,7 @@ input:checked+.slider:before {
   cursor: pointer;
   position: relative;
   margin-bottom: 0.5rem;
+  /* padding-left: 5rem; */
 }
 
 /*
@@ -301,7 +306,6 @@ details summary {
 }
 
 details summary p {
-  margin-bottom: 0.5rem;
   padding: 0;
 }
 
@@ -338,6 +342,7 @@ details summary:hover {
 
 .estudios-columns {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: 2rem;
   justify-content: space-evenly;
@@ -486,7 +491,7 @@ details summary:hover {
   text-align: left;
 }
 
-.us-logo {
+.container-logo {
   position: sticky;
   flex: .5;
   display: flex;
@@ -497,20 +502,20 @@ details summary:hover {
   /* align-self: center; */
 }
 
-.us-logo-description {
+.logo-description {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
 .hr-style {
-  border-top: 2px solid;
+  /* border-top: 1px solid; */
   text-align: center;
   width: 100%;
   height: 0;
 }
 
-.us-grado-texto {
+.grado-texto {
   padding-top: 1rem;
   padding-bottom: 4rem;
 
@@ -521,24 +526,35 @@ details summary:hover {
   -webkit-mask-image: var(--gradient, none);
 }
 
-.us-grado-texto::-webkit-scrollbar {
+.grado-texto-havard {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+
+  flex: 1;
+  overflow-y: auto;
+}
+.grado-texto-havard::-webkit-scrollbar {
   display: none;
 }
 
-.us-logo img {
+.grado-texto::-webkit-scrollbar {
+  display: none;
+}
+
+.container-logo img {
   width: 100%;
   height: 100%;
 }
 
-.us-logo p {
+.container-logo p {
   text-align: center;
 }
 
-.us-seccion {
+.grado-seccion {
   color: white;
 }
 
-.us-seccion h2 {
+.grado-seccion h2 {
   margin-bottom: .5rem;
 }
 
@@ -652,118 +668,135 @@ details summary:hover {
   position: relative;
   display: flex;
   flex-direction: row;
-}
-
-.container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-
   width: 100%;
-
   margin: 0;
   padding: 0;
 }
 
-.artificio_lateral {
+
+/* Timeline component para experiencia */
+.timeline {
   position: relative;
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-
-  /* WIDTH del artificio 10% - 90% del texto */
-  width: 10%;
-  height: 100%;
+  border-left: 2px solid var(--color-fuente);
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+  padding-top: 1rem;
+  margin-left: 1rem;
 }
 
-.container-linea {
-  height: 100%;
-  width: 100%;
-}
-
-.container-linea .linea {
+.timeline-item {
+  margin-bottom: 3rem;
+  margin-left: 2rem;
   position: relative;
-  /* Tamaño de la linea */
-  height: 95%;
-  /* Espesor de la linea */
-  width: 5px;
-
-  margin-top: 20px;
-  justify-self: center;
-  background-color: var(--color-fuente);
 }
 
-.container .circulo {
+.timeline-item-last {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
   position: absolute;
-  width: 20px;
-  height: 20px;
-
-  border-radius: 100%;
-  background-color: var(--color-fuente);
-
-  align-content: center;
-}
-
-.container .circulo .centro {
-  position: relative;
-  width: 70%;
-  height: 70%;
-
-  border-radius: 100%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
   background-color: var(--color-fondo);
-  justify-self: center;
+  border: 3px solid var(--color-fuente);
+  border-radius: 50%;
+  left: -2.75rem;
+  top: 0.2rem;
 }
 
+.timeline-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-fuente);
+}
+
+.timeline-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-fuente);
+  margin-top: 0;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.timeline-badge {
+  background-color: rgba(255, 199, 44, 0.2);
+  color: #ffc72c;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid #ffc72c;
+}
+
+.timeline-date {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #ffc72c;
+}
+
+.timeline-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--color-fuente);
+}
+
+.timeline-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Dark mode support para timeline */
+[tema="dark"] .timeline {
+  border-left-color: var(--color-fuente);
+}
+
+[tema="dark"] .timeline-marker {
+  background-color: var(--color-fondo);
+  border-color: var(--color-fuente);
+}
+
+[tema="dark"] .timeline-badge {
+  background-color: rgba(255, 199, 44, 0.1);
+  border-color: #ffc72c;
+}
 
 
 /* ========= EXPERIENCIA (TEXTO) ========= */
 
-.container-texto {
-  /* WIDTH del artificio 10% - 90% del texto */
-  width: 90%;
-  height: 400px;
-
-  padding: 0;
-  position: relative;
+.titulo-y-fecha {
+  margin-top: 1.5rem; /* Como el top: 1.5rem del marker */
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
 
-.container-texto p,
-.container-texto h2 {
+.no-margin {
   margin: 0;
   padding: 0;
 }
 
-.titulo-fecha {
-  display: flex;
-  width: 100%;
+.timeline-item p {
+  margin-top: 0;
 }
 
-.titulo-fecha p {
+.fecha-del-titulo {
   margin-left: auto;
+  align-self: center;
 }
 
-.texto {
-  position: absolute;
-  width: 100%;
-}
-
-
-.container .circulo {
-  margin-top: 50px;
-}
-
-.circulo.secundario {
-  margin-top: 260px;
-}
-
-.texto.primero {
-  margin-top: 45px;
-}
-
-.texto.segundo {
-  margin-top: 255px;
+.harvard-logo {
+  margin-left: 0%;
 }
 
 
@@ -838,7 +871,6 @@ details summary:hover {
 
 .left-column p {
   margin: 0;
-  padding: 0;
   width: 75%;
 }
 
@@ -857,6 +889,9 @@ details summary:hover {
 
 /* ======== CONTACTO ======== */
 
+.contact {
+  display: block;
+}
 
 .contact-title {
   font-size: 1.5rem;
@@ -869,9 +904,10 @@ details summary:hover {
 .contact-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-left: -0.5rem;
   margin-top: 1rem;
-  gap: 2rem;
+  gap: 2rem
 }
 
 .contact-list-elemnt {
@@ -884,7 +920,7 @@ details summary:hover {
 
 .logo-text {
   padding: 0;
-  padding-top: 0.5rem;
+  padding-top: 0.3rem;
 }
 
 .contact-list img {
@@ -943,6 +979,8 @@ details summary:hover {
   height: 100%;
   height: auto;
   display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
 
   padding-top: 2rem;
   justify-content: space-evenly;
@@ -955,6 +993,8 @@ details summary:hover {
   box-sizing: border-box;
 
   cursor: pointer;
+
+  z-index: 100;
 
   display: grid;
   place-items: center;
@@ -1028,6 +1068,57 @@ details summary:hover {
   --hover: 1;
 }
 
+.proyectos-container-knowledge {
+  display: block;
+  /* width: 288px; */
+  justify-items: center;
+  align-self: center;
+}
+
+.proyectos-container-knowledge-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+
+
+
+
+.card-proyecto-tfg-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.card-proyecto-tfg-wrapper .tecnologias-hover {
+  position: relative;
+  justify-content: center;
+  transform: translateY(-100%);
+  block-size: auto;
+  z-index: 0;
+  gap: 8px;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.card-proyecto-tfg-wrapper:hover .tecnologias-hover,
+.card-proyecto-tfg-wrapper:focus-within .tecnologias-hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(1rem);
+  block-size: auto;
+}
+
+.tecnologias-hover img {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: contain;
+}
+
+
+
 
 /* =================================================== */
 /* ==================== Sobre mi ===================== */
@@ -1040,7 +1131,12 @@ details summary:hover {
   /* un circulo de radio 40% y con centro 40% de x y 50% de y */
   clip-path: circle(40% at 48% 50%);
   shape-outside: circle(45%);
-  width: 25rem;
+  max-width: 25rem;
+  width: 100%;
+}
+
+.no-justify {
+  justify-self: left;
 }
 
 .contact-02 {
@@ -1052,6 +1148,7 @@ details summary:hover {
   margin: 0;
   padding: 0;
 }
+
 .contact-02 .contact-list {
   margin: 0;
   padding: 0;
@@ -1067,18 +1164,23 @@ details summary:hover {
 /* =================================================== */
 /* =================================================== */
 
+/* =================== Width ==================== */
 
-@media (max-width: 475px) {}
+@media (max-width: 768px) {
+  #sobremi {
+    justify-items: center;
+  }
 
-@media (max-width: 640px) {}
+  .yo_imagen_sobremi {
+    float: none;
+  }
+}
 
-@media (max-width: 768px) {}
+@media (max-width: 1360px) {
 
-@media (max-width: 1024px) {}
-
-@media (max-width: 1280px) {}
-
-@media (max-width: 1600px) {
+  .container-logo {
+    display: none;
+  }
 
   .left-column {
     visibility: hidden;
@@ -1086,17 +1188,68 @@ details summary:hover {
 
   .right-column {
     padding-left: 7%;
-    /* width: 100%; */
   }
-}
 
-@media (max-height:900px) {
   .contact-02 {
     margin-top: 4rem;
     display: block;
+  }
+
+  .contact-list {
+    row-gap: 0;
+    column-gap: 2rem;
   }
 
   .contact {
     display: none;
   }
 }
+
+/* =================== Height ==================== */
+
+@media (max-height:580px) {
+  .left-column-description {
+    display: none;
+  }
+  .title {
+    display: none;
+  }
+  .contact-02 {
+    display: block;
+  }
+  .contact {
+    display: none;
+  }
+}
+
+@media (max-height:790px) {
+  .container-logo {
+    display: none;
+  }
+
+  .left-column-description {
+    display: none;
+  }
+  .title {
+    display: none;
+  }
+
+  .contact-02 {
+    display: none;
+  }
+
+  .contact {
+    display: block;
+  }
+
+}
+
+@media (max-height:1020px) {
+  .left-column-description {
+    display: none;
+  }
+  .contact {
+    display: block;
+  }
+}
+
